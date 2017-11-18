@@ -4,7 +4,6 @@
 
 	$token = $_POST["token"];
 	$key = $_POST["key"];
-	$time = $_POST["time"];
 	
 	$trueToken = $_token;	//The true token.
 
@@ -25,6 +24,7 @@
 			$onceCodeJSON['ONECODE'] = $oneCodeEncrypt;
 			$onceCodeJSON['TIME'] = date("Y-m-d H:i:s",intval(time()));
 			$onceCodeJSON['USED'] = "false";
+			$onceCodeJSON['ERRORTIME'] = 0;
 			file_put_contents('OneCode.json', json_encode($onceCodeJSON));
 			
 			$returnJSON['CODE'] = 200;
@@ -35,7 +35,7 @@
 			
     	}else{
 			
-			$returnJSON['CODE'] = 233;
+			$returnJSON['CODE'] = 501;
 			$returnJSON['Message'] = "Authorization Error!";
 			
 			echo json_encode($returnJSON);

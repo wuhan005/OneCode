@@ -1,6 +1,6 @@
 <?php
-	$_salt = "your_salt_here";
+	$_salt = "";
 	
-	$_token = "your_pass_word_here";
-    $_key = "your_key_here";
+	$_token = "";
+    $_key = "";
 ?>
